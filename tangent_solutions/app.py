@@ -3,6 +3,8 @@ from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 import os
 from datetime import datetime
+import re
+
 
 # init App
 app = Flask(__name__)
@@ -77,19 +79,32 @@ def view_leave():
     return jsonify(result.data)
 
 
+@app.route('/leave/<id>/<status>', methods=['PUT'])
+def edit_product(id, status):
+    changed_status = leave.query.get(id)
+    changed_status.status = status
+    db.session.commit()
+    return leave_schema.jsonify(changed_status)
+
+
 @app.route('/user', methods=['POST'])
 def create_user():
     emp_number = request.json['emp_number']
-    phone_number = request.json['phone_number']
-    first_name = request.json['first_name']
-    last_name = request.json['last_name']
+    pattern = re.compile("TS\d{4}")
+    if(pattern.match(emp_number)):
 
-    new_user = employee(emp_number, phone_number, first_name, last_name)
+        phone_number = request.json['phone_number']
+        first_name = request.json['first_name']
+        last_name = request.json['last_name']
 
-    db.session.add(new_user)
-    db.session.commit()
+        new_user = employee(emp_number, phone_number, first_name, last_name)
 
-    return "okay"
+        db.session.add(new_user)
+        db.session.commit()
+
+        return "okay"
+    else:
+        return "invalid employee number"
 
 
 @app.route('/leave', methods=['POST'])

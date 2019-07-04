@@ -19,3 +19,12 @@
 |/user   |POST  | {emp_number, phone_number,first_name,last_name}  |  "invalid employee number" - user emp ID does match format |
 |   |  |   | "okay" - user created|
 
+# hosted web service end points
+
+## please reffer to the about end points table for usabe of the hosted API's 
+## use postman for testing
+
+### https://kylies97.pythonanywhere.com/leave
+### https://kylies97.pythonanywhere.com/leave
+### https://kylies97.pythonanywhere.com/leave/<id>/<status>
+### https://kylies97.pythonanywhere.com/user

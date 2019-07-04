@@ -1,6 +1,6 @@
 # tangentSolutionTest
 
-#how to run
+# how to run
 ## git clone https://github.com/kyle-manganyi/tangentSolutionTest.git
 
 ## cd tangentSolutionTest

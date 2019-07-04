@@ -12,4 +12,7 @@
 | path  | method | body  | response |
 | ------------- | ------------- | ------------- | ------------- |
 | /leave  | GET  | {}  | Content Cell  |
-| /leave  | POST  | {emp_number,start_date,end_date,days_of_leave}  | Content Cell  |
+| /leave  | POST  | {emp_number,
+start_date,
+end_date,
+days_of_leave}  | Content Cell  |

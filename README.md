@@ -26,5 +26,5 @@
 
 ### https://kylies97.pythonanywhere.com/leave
 ### https://kylies97.pythonanywhere.com/leave
-### https://kylies97.pythonanywhere.com/leave/id/satus###
+### https://kylies97.pythonanywhere.com/leave/id/satus
 ### https://kylies97.pythonanywhere.com/user

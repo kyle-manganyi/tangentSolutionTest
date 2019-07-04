@@ -9,7 +9,7 @@
 ###     - open http://localhost:5000 on your machine
 
 # endpoints
-| First Header  | Second Header | First Header  | Second Header |
+| path  | method | body  | response |
 | ------------- | ------------- | ------------- | ------------- |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| /leave  | GET  | {}  | Content Cell  |
+| /leave  | POST  | {emp_number,start_date,end_date,days_of_leave}  | Content Cell  |

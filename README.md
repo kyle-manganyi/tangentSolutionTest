@@ -14,3 +14,8 @@
 | /leave  | GET  | {}  | return list of all leave objects in the databse  |
 | /leave  | POST  | {emp_number,start_date,end_date,days_of_leave}  | "Employee Does not exist" - employee number does not exist in DB |
 |   |  |   | "dates invalid" - end date is before start date  |
+|   |  |   | {"days_of_leave": ,"emp_number": ,"status": } - leave created ad details displayed  |
+|/leave/<id>/<status>   |PUT|{}|  {"days_of_leave": ,"emp_number": ,"status": } - leave updated and details displayed  |
+|/user   |POST  | {emp_number, phone_number,first_name,last_name}  |  "invalid employee number" - user emp ID does match format |
+|   |  |   | "okay" - user created|
+

@@ -12,7 +12,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
-    os.path.join(basedir, 'db.leaves ')
+    os.path.join(basedir, 'db.leaves')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # init DB
@@ -72,6 +72,10 @@ leaves_schema = leaveSchema(many=True, strict=True)
 employee_schema = employeeSchema(strict=True)
 
 # Api routes
+@app.route('/')
+def home():
+  return 'kyle is here'
+
 @app.route('/leave', methods=['GET'])
 def view_leave():
     all_leaves = leave.query.all()
@@ -133,4 +137,5 @@ def create_leave():
 
 # run server
 if __name__ == "__main__":
-    app.run(debug=True)
+  db.create_all()
+  app.run(host='0.0.0.0',port=5000)
